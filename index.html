@@ -12,11 +12,110 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="assets/js/scripts.js"></script>
 </head>
 <body>
-    
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1><i class="fas fa-train"></i>  Train Scheduler  <i class="fas fa-train"></i></h1>
+                    <h2>Always on time!</h2>
+                </div>
+            </div>
+            &nbsp;
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-lg btn-success" href="#train-schedule">Check Schedule</button>
+                    <button type="button" class="btn btn-lg btn-success" href="#register-train">Register Train</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="train-schedule">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Train Schedule</h2>
+                        <br>
+                    </div>
+                    <div class="col-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">First Train Time</th>
+                                <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">Express</th>
+                                <td>Ohio</td>
+                                <td>Ohio</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">3</th>
+                                <td>Larry the Bird</td>
+                                <td>Larry the Bird</td>
+                                <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="register-train">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Register Train</h2>
+                    </div>
+                    <div class="col-12">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
