@@ -17,35 +17,36 @@ $("#btn-register-train").on("click", function(event) {
     event.preventDefault();
   
     // Grabs user input
-    var empName = $("#employee-name-input").val().trim();
-    var empRole = $("#role-input").val().trim();
-    var empStart = moment($("#start-input").val().trim(), "DD/MM/YY").format("X");
-    var empRate = $("#rate-input").val().trim();
+    var trainName = $("#train-name").val().trim();
+    var TrainDestination = $("#train-destination").val().trim();
+    var trainFirst = moment($("#train-first-time").val().trim(), "HH:mm")
+    var trainFrequency = $("#train-frequency").val().trim();
   
     // Creates local "temporary" object for holding employee data
-    var newEmp = {
-      name: empName,
-      role: empRole,
-      start: empStart,
-      rate: empRate
+    var newTrain = {
+      name: trainName,
+      destination: TrainDestination,
+      firstTime: trainFirst,
+      frequency: trainFrequency
     };
   
     // Uploads employee data to the database
-    database.ref().push(newEmp);
-  
+    database.ref().push(newTrain);
+    
+    console.log(newTrain);
     // Logs everything to console
-    console.log(newEmp.name);
-    console.log(newEmp.role);
-    console.log(newEmp.start);
-    console.log(newEmp.rate);
+    // console.log(newTrain.name);
+    // console.log(newTrain.destination);
+    // console.log(newTrain.firstTime);
+    // console.log(newTrain.frequency);
   
     // Alert
-    alert("Employee successfully added");
+    alert("Train successfully added");
   
     // Clears all of the text-boxes
-    $("#employee-name-input").val("");
-    $("#role-input").val("");
-    $("#start-input").val("");
-    $("#rate-input").val("");
+    $("#train-name").val("");
+    $("#train-destination").val("");
+    $("#train-first-time").val("");
+    $("#train-frequency").val("");
   
 });
