@@ -12,7 +12,7 @@
 
   var database = firebase.database();
 
-  // 2. Button for adding Employees
+  // 2. Button for adding Trains
 $("#btn-register-train").on("click", function(event) {
     event.preventDefault();
   
@@ -22,7 +22,7 @@ $("#btn-register-train").on("click", function(event) {
     var trainFirst = moment($("#train-first-time").val().trim(), "HH:mm");
     var trainFrequency = $("#train-frequency").val().trim();
   
-    // Creates local "temporary" object for holding employee data
+    // Creates local "temporary" object for holding train data
     var newTrain = {
       name: trainName,
       destination: TrainDestination,
@@ -30,13 +30,12 @@ $("#btn-register-train").on("click", function(event) {
       frequency: trainFrequency
     };  
   
-    // Uploads employee data to the database
+    // Uploads train data to the database
     database.ref().push(newTrain);
     
     
   
-    // Alert
-    alert("Train successfully added");
+    $("html, body").animate({ scrollTop: $('#train-schedule').offset().top }, 1000);
   
     // Clears all of the text-boxes
     $("#train-name").val("");
@@ -46,6 +45,7 @@ $("#btn-register-train").on("click", function(event) {
   
 });
 
+// Event that will listen to every change on the firebase database and then will add the new data to the HTMl table
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   // Store everything into variables.
