@@ -22,19 +22,19 @@ You can access the website without downloading any file by clicking [here](https
 - __Train-Scheduler__
   - __assets__
     - __css__
-      - [style.css](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/css/style.css)
+      - [style.css](/assets/css/style.css)
     - __img__
       - __favicon__
-        - [apple-touch-icon.png](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/apple-touch-icon.png)
-        - [android-chrome-192x192.png](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/android-chrome-192x192.png)
-        - [browserconfig.xml](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/browserconfig.xml)
-        - [favicon-32x32.png](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/favicon-32x32.png)
-        - [favicon-16x16.png](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/favicon-16x16.png)
-        - [favicon.ico](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/favicon.ico)
-        - [mstile-150x150.png](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/mstile-150x150.png)
-        - [site.webmanifest](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/img/favicon/site.webmanifest)
+        - [apple-touch-icon.png](/assets/img/favicon/apple-touch-icon.png)
+        - [android-chrome-192x192.png](/assets/img/favicon/android-chrome-192x192.png)
+        - [browserconfig.xml](/assets/img/favicon/browserconfig.xml)
+        - [favicon-32x32.png](/assets/img/favicon/favicon-32x32.png)
+        - [favicon-16x16.png](/assets/img/favicon/favicon-16x16.png)
+        - [favicon.ico](/assets/img/favicon/favicon.ico)
+        - [mstile-150x150.png](/assets/img/favicon/mstile-150x150.png)
+        - [site.webmanifest](/assets/img/favicon/site.webmanifest)
     - __js__
-      - [scripts.js](C:\Users\gusta\Documents\projects\Train-Scheduler/assets/js/scripts.js)
-  - [index.html](C:\Users\gusta\Documents\projects\Train-Scheduler/index.html)
-  - [LICENSE](C:\Users\gusta\Documents\projects\Train-Scheduler/LICENSE)
-  - [README.md](C:\Users\gusta\Documents\projects\Train-Scheduler/README.md)
+      - [scripts.js](/assets/js/scripts.js)
+  - [index.html](/index.html)
+  - [LICENSE](/LICENSE)
+  - [README.md](/README.md)
