@@ -1,3 +1,7 @@
+body {
+    font-family: 'Signika', sans-serif;
+}
+
 header {
     padding: 75px 0px;
     background: #2257ad;
@@ -12,4 +16,9 @@ header {
     padding: 25px 0px;
     background: #2257ad;
     color: #fff;
+}
+
+.footer {
+    padding: 45px 0px;
+    font-size: 20px;
 }
