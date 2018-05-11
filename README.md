@@ -11,6 +11,7 @@ Project/Homework to use the functionality of the Firebase Tool. Users can access
 * Bootstrap 4.0.0
 * Javascript
 * jQuery 3.3.1
+* Moment.js
 * Google Firebase for storing data.
 
 # Link
