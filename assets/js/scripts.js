@@ -48,8 +48,6 @@ $("#btn-register-train").on("click", function(event) {
 
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-  console.log(childSnapshot.val());
-
   // Store everything into variables.
   var trainName = childSnapshot.val().name;
   var TrainDestination = childSnapshot.val().destination;
@@ -64,7 +62,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   // Difference between the times
   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-
 
   // Time apart (remainder)
   var tRemainder = parseInt(diffTime % trainFrequency);
@@ -87,12 +84,17 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   tdDestination.append(TrainDestination);
 
   var tdFrequency = $("<td>");
+  tdFrequency.addClass("tdFrequency");
+  tdFrequency.attr("trainFrequency",trainFrequency);
   tdFrequency.append(trainFrequency);
 
   var tdFirstTime = $("<td>");
+  tdFirstTime.addClass("tdFirstTime");
+  tdFirstTime.attr("trainFirst",trainFirst);
   tdFirstTime.append(nextTrain);
 
   var tdMinutesAway = $("<td>");
+  tdMinutesAway.addClass("tdMinutesAway");
   tdMinutesAway.append(tMinutesTillTrain);
 
   tr.append(tdTrainName);
@@ -101,5 +103,87 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   tr.append(tdFirstTime);
   tr.append(tdMinutesAway);
 
+  tr.removeClass("table-danger");
+  tr.removeClass("table-warning");
+  tr.removeClass("table-primary");
+
+  if(tMinutesTillTrain <= 10) {
+
+    tr.addClass("table-danger");
+
+  } else if(tMinutesTillTrain > 10 && tMinutesTillTrain <= 20) {
+
+    tr.addClass("table-warning");
+
+  } else {
+
+    tr.addClass("table-primary");
+
+  }
+
   trainList.append(tr);
 });
+
+//Creating the SetInterval to update the minutes each minute
+function updateMinutes() {
+
+  $("#train-list > tr").each(function() {
+
+    var trainFirst = $(this).find(".tdFirstTime").attr("trainFirst");
+    var firstTimeConverted = moment(trainFirst, "HH:mm").subtract(1, "years");
+    var currentTime = moment();
+    var trainFrequency = parseInt($(this).find(".tdFrequency").attr("trainFrequency"));
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+
+    console.log("trainFirst: " + trainFirst);
+    var tRemainder = parseInt(diffTime % trainFrequency);
+    
+    var tMinutesTillTrain = parseInt(trainFrequency - tRemainder);
+
+    console.log("tMinutesTillTrain: " + tMinutesTillTrain);
+
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    nextTrain = moment(nextTrain).format("hh:mm");
+
+    console.log("nextTrain: " + nextTrain);
+
+    $(this).find(".tdFirstTime").text(nextTrain);
+    $(this).find(".tdMinutesAway").text(tMinutesTillTrain);
+
+    $(this).removeClass("table-danger");
+    $(this).removeClass("table-warning");
+    $(this).removeClass("table-primary");
+
+    if(tMinutesTillTrain <= 10) {
+
+      $(this).addClass("table-danger");
+
+    } else if(tMinutesTillTrain > 10 && tMinutesTillTrain <= 20) {
+
+      $(this).addClass("table-warning");
+
+    } else {
+
+      $(this).addClass("table-primary");
+
+    }
+
+  });
+
+}
+
+$(".bt-train-schedule").on("click", function(event) {
+
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $('#train-schedule').offset().top }, 1000);
+
+});
+
+$(".bt-register-train").on("click", function(event) {
+
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $('#register-train').offset().top }, 1000);
+
+});
+
+var timer = setInterval(updateMinutes, 60000);
